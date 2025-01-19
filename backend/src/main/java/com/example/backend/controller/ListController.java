@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,13 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.backend.models.ListT;
 import com.example.backend.service.ListService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/lists")
 public class ListController {
  @Autowired
     private ListService listTService;
 
-    // Create a new ListT
+    // Create a new ListT 
     @PostMapping
     public ResponseEntity<String> createList(@RequestBody ListT listT) {
         listTService.createList(listT);

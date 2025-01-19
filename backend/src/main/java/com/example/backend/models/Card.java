@@ -1,10 +1,11 @@
 package com.example.backend.models;
 
-public class Card {
+public class Card { 
     private long id;
     private String title;
     private String description;
-    private ListT list;
+    private long list_id;
+    
     public long getId() {
         return id;
     }
@@ -23,16 +24,16 @@ public class Card {
     public void setDescription(String description) {
         this.description = description;
     }
-    public ListT getList() {
-        return list;
+    public long getList_id() {
+        return list_id;
     }
-    public void setList(ListT list) {
-        this.list = list;
-    }
-    @Override
-    public String toString() {
-        return "Card [id=" + id + ", title=" + title + ", description=" + description + ", listt=" + list + "]";
+    public void setList_id(long list_id) {
+        this.list_id = list_id;
     }
 
+    @Override
+    public String toString() {
+        return "Card [id=" + id + ", title=" + title + ", description=" + description + ", list_id=" + list_id + "]";
+    }
     
 }
